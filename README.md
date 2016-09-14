@@ -1,1 +1,1 @@
-Apache + PHP5 for MODX
+Docker Compose Apache + PHP5 with MySQL for MODX

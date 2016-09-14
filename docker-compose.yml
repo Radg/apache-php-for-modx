@@ -1,0 +1,17 @@
+www:
+  build: images/www
+  links:
+    - db:mysql
+  ports:
+    - 80:80
+    - 443:443
+  volumes:
+    - "./wwwhtml:/var/www/html"
+db:
+  image: mysql
+  ports:
+    - 3306:3306
+  volumes:
+    - "./libmysql:/var/lib/mysql"
+  enviroment:
+    MYSQL_ROOT_PASSWORD: mySecretMySQLPassword
