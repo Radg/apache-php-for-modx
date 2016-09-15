@@ -11,5 +11,5 @@ db:
   image: mysql
   volumes:
     - "./libmysql:/var/lib/mysql"
-  enviroment:
+  environment:
     MYSQL_ROOT_PASSWORD: mySecretMySQLPassword
