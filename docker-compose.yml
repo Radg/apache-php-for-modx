@@ -9,8 +9,6 @@ www:
     - "./wwwhtml:/var/www/html"
 db:
   image: mysql
-  ports:
-    - 3306:3306
   volumes:
     - "./libmysql:/var/lib/mysql"
   enviroment:
