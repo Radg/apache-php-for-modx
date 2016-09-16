@@ -8,10 +8,11 @@ RUN apt-get update && \
   echo "ServerName localhost" >> /etc/apache2/apache2.conf && \
   a2enmod rewrite
 
-COPY ssl-keys/ /var/ssl-keys/
+# COPY ssl-keys/ /var/ssl-keys/
+# COPY htpasswd /etc/apache2/.htpasswd
 
 ADD apache_default_conf /etc/apache2/sites-available/000-default.conf
-ADD default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
+ADD apache_default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
 ADD apache_dir_conf /etc/apache2/mods-enabled/dir.conf
 
 EXPOSE 80 443
