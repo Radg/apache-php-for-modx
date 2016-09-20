@@ -15,7 +15,8 @@ ADD apache_default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
 ADD apache_dir_conf /etc/apache2/mods-enabled/dir.conf
 # ADD htpasswd /etc/apache2/.htpasswd
 
+COPY apache_start.sh /usr/local/bin/
+
 EXPOSE 80 443
 
-CMD /usr/sbin/apache2ctl -D FOREGROUND
-
+CMD apache_start.sh
